@@ -16,3 +16,8 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ /* Move down content because of the navbar */
+body {
+  padding-top: 50px;
+}

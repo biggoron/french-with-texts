@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'contact' => 'main#contact'
+  get 'vocabulary' => 'main#vocabulary'
+  get 'grammar' => 'main#grammar'
+  get 'lessons' => 'main#lessons'
+
+  root 'main#index'
+
+  namespace :backend do
+    get 'contact' => 'main#contact'
+    get 'vocabulary' => 'main#vocabulary'
+    get 'grammar' => 'main#grammar'
+    get 'lessons' => 'main#lessons'
+
+    root 'main#index'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
