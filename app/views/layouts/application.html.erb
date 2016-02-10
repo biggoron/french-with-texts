@@ -14,36 +14,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" 
-        class="navbar-toggle collapsed"
-        data-toggle="collapse" 
-        data-target="#navbar"
-        aria-expanded="false" 
-        aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <a class="navbar-brand" href="#">French With Texts</a>
+  <nav>
+    <div>
+      <div>
+        <button>
+          <a href="#">French With Texts</a>
         </button>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Sign in</a></li>
-          <li><a href="#">Sign up</a></li>
-          <li><a href="#">links</a></li>
-          <li><a href="#">events</a></li>
+      <div>
+        <ul> 
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Lessons</a></li>
+          <li><a href="#">Texts</a></li>
+          <li><a href="#">Grammar</a></li>
+          <li><a href="#">Vocabulary</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Events</a></li>
         </ul>
-        <form class="navbar-form navbar-right">
-          <input type="text" class="form-control" placeholder="Search...">
+        <form>
+          <input type="text" placeholder="Search lesson">
         </form>
       </div>
     </div>
   </nav>
-  <div class="container-fluid">
+  <div> 
     <%= yield %>
   </div>
 
