@@ -23,13 +23,15 @@
       </div>
       <div>
         <ul> 
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Lessons</a></li>
-          <li><a href="#">Texts</a></li>
-          <li><a href="#">Grammar</a></li>
-          <li><a href="#">Vocabulary</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Events</a></li>
+          <li><%= link_to 'Home', controller: 'main' %></li>
+          <li><%= link_to 'Lessons', lessons_path %></li>
+          <li><%= link_to 'Texts', articles_path %></li>
+          <li><%= link_to 'Grammar', controller: 'grammar' %></li>
+          <li><%= link_to 'Vocabulary', controller: 'vocabulary' %></li>
+          <li><%= link_to 'Projects', controller: 'projects' %></li>
+          <li><%= link_to 'Events', controller: 'events' %></li>
+          <li><%= link_to 'Contact', controller: :main,
+          action: :contact %></li>
         </ul>
         <form>
           <input type="text" placeholder="Search lesson">
