@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  abs_lvl: 1
+  rel_lvl: 1
+  body: MyText
+  article_id: 
+
+two:
+  abs_lvl: 1
+  rel_lvl: 1
+  body: MyText
+  article_id: 

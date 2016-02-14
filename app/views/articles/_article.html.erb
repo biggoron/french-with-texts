@@ -1,0 +1,32 @@
+<%= link_to article_path(article) do %>
+  <div class='article-thumnbail'>
+    <span class='thumbnail-title'>
+      <%= article.title %>
+    </span><br/>
+    <% if @admin %>
+      <span class='thumbnail-online'>
+        <% if article.online %>
+          online <%= link_to 'Put Offline?',
+                              controller: 'articles',
+                              action: :offline,
+                              id: article.id
+                              %> 
+        <% else %>
+          offline <%= link_to 'Put Online?',
+                              controller: 'articles',
+                              action: :online,
+                              id: article.id %> 
+        <% end %>
+      </span><br/>
+      <span class='admin-links'>
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <br/>
+        <%= link_to 'Destroy',
+              article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+              %>
+      </span>
+    <% end %>
+  </div>
+<% end %> 

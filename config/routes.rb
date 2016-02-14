@@ -1,33 +1,33 @@
 Rails.application.routes.draw do
-  get 'contact' => 'main#contact'
-  get 'vocabulary' => 'main#vocabulary'
-  get 'grammar' => 'main#grammar'
-  get 'lessons' => 'main#lessons'
-
   root 'main#index'
-
-  namespace :backend do
-    get 'contact' => 'main#contact'
-    get 'vocabulary' => 'main#vocabulary'
-    get 'grammar' => 'main#grammar'
-    get 'lessons' => 'main#lessons'
-
-    root 'main#index'
+  resources :lessons, :grammar_rules, :tags,
+           :commentary, :projects
+  resources :articles do
+    resources :writings, :remarks
   end
+  get 'articles/online/:id' => 'articles#online'
+  get 'articles/offline/:id' => 'articles#offline'
+  get 'contact' => 'main#contact'
+  get 'admin_login' => 'main#admin_login'
+  get 'admin_logout' => 'main#admin_logout'
+  get 'vocabulary/index' => 'vocabulary'
+  get 'grammar/index' => 'grammar'
+  get 'events/index' => 'events'
+  get 'projects/index' => 'projects'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+    # The priority is based upon order of creation: first created -> highest priority.
+    # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+    # You can have the root of your site routed with "root"
+    # root 'welcome#index'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+    # Example of regular route:
+    #   get 'products/:id' => 'catalog#view'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+    # Example of named route that can be invoked with purchase_url(id: product.id)
+    #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
+    # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
   # Example resource route with options:

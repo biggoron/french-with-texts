@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @display_text = "events"
     @admin = is_admin?
+    render 'layouts/not_implemented'
   end
 private
   def is_admin?

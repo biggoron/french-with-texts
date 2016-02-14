@@ -14,31 +14,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <div>
-      <div>
-        <button>
-          <a href="#">French With Texts</a>
-        </button>
-      </div>
-      <div>
-        <ul> 
-          <li><%= link_to 'Home', controller: 'main' %></li>
-          <li><%= link_to 'Lessons', lessons_path %></li>
-          <li><%= link_to 'Texts', articles_path %></li>
-          <li><%= link_to 'Grammar', controller: 'grammar' %></li>
-          <li><%= link_to 'Vocabulary', controller: 'vocabulary' %></li>
-          <li><%= link_to 'Projects', controller: 'projects' %></li>
-          <li><%= link_to 'Events', controller: 'events' %></li>
-          <li><%= link_to 'Contact', controller: :main,
-          action: :contact %></li>
-        </ul>
-        <form>
-          <input type="text" placeholder="Search lesson">
-        </form>
-      </div>
-    </div>
-  </nav>
+<%= render 'layouts/sidebar' %>
   <div> 
     <%= yield %>
   </div>

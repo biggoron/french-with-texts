@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def index
-    @display_text = "projects"
     @admin = is_admin?
+    render 'layouts/not_implemented'
   end
 private
   def is_admin?

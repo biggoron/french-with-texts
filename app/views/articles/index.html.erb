@@ -1,2 +1,20 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<div class='display-block' id='display-articles'>
+  <h1>Listing articles</h1>
+  <% @articles.each do |article| %>
+    <% if @admin or article.online %>
+    <%= render partial: 'articles/article',
+                locals: {article: article}
+    %>
+    <% end %>
+  <% end %>
+
+  <% if @admin %>
+    <%= link_to new_article_path do %>
+      <div class='article-thumnbail'>
+        <span class='thumbnail-title'>
+          <strong>Add article</strong>
+        </span>
+      </div>
+    <% end %> 
+  <% end %>
+</div>

@@ -1,7 +1,7 @@
 class VocabularyController < ApplicationController
   def index
-    @display_text = "vocabulary"
     @admin = is_admin?
+    render 'layouts/not_implemented'
   end
 private
   def is_admin?

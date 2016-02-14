@@ -1,0 +1,2 @@
+module Backend::WritingsHelper
+end
