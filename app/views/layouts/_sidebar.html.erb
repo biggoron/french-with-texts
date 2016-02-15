@@ -1,17 +1,17 @@
-<nav>
-  <div>
-    <div>
-      <button>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div id="navbar" class"navbar-collapse collapse">
+      <ul class="nav navbar-nav"> 
         <% if @admin %>
-          <a href="#">French With Texts - Admin</a>
+          <li><%= link_to 'French With Texts - Admin',
+              root_path %></li>
         <% else %>
-          <a href="#">French With Texts</a>
+          <li><%= link_to 'French With Texts',
+              root_path %></li>
         <% end %>
-      </button>
-    </div>
-    <div>
-      <ul> 
-        <li><%= link_to 'Home', controller: 'main' %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right"> 
+        <li class="active"><%= link_to 'Home', controller: 'main' %></li>
         <li><%= link_to 'Lessons', lessons_path %></li>
         <li><%= link_to 'Texts', articles_path %></li>
         <li><%= link_to 'Grammar', controller: 'grammar' %></li>
@@ -25,9 +25,6 @@
                           controller: :main, 
                           action: :contact %></li>
       </ul>
-      <form>
-        <input type="text" placeholder="Search lesson">
-      </form>
     </div>
   </div>
 </nav>

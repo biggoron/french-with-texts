@@ -11,8 +11,10 @@
   <%= writing.translation %>
 </p>
 
-<%= link_to 'Edit', [:edit, writing.article, writing]%>
-<%= link_to 'Destroy', [writing.article, writing],
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' }%>
+<% if @admin %>
+  <%= link_to 'Edit', [:edit, writing.article, writing]%>
+  <%= link_to 'Destroy', [writing.article, writing],
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' }%>
+<% end %>
                     
