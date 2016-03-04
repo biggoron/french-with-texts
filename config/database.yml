@@ -81,5 +81,7 @@ test:
 production:
   <<: *default
   database: french-with-texts_production
-  username: french-with-texts
-  password: <%= ENV['FRENCH-WITH-TEXTS_DATABASE_PASSWORD'] %>
+  #username: french-with-texts
+  username: railsapp
+  #password: <%= ENV['FRENCH-WITH-TEXTS_DATABASE_PASSWORD'] %>
+  password: 3n98g3n98g
