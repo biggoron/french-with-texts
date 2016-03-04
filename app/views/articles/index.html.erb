@@ -9,12 +9,13 @@
   <% end %>
 
   <% if @admin %>
-    <%= link_to new_article_path do %>
-      <div class='article-thumnbail'>
-        <span class='thumbnail-title'>
-          <strong>Add article</strong>
-        </span>
-      </div>
-    <% end %> 
+    <div class='article-thumbnail'>
+      <%= link_to new_article_path do %>
+        <div id='add-article'>
+          <span class="glyphicon glyphicon-plus">
+          </span>
+        </div>
+      <% end %> 
+    </div>
   <% end %>
 </div>

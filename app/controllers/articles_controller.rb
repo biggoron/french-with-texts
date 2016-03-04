@@ -58,6 +58,12 @@ private
     other_params = {}
     other_params[:online] = 0
     other_params[:layout] = 0 
-    other_params.merge(params.require(:article).permit(:title))
+    other_params.merge(
+      params.require(:article).permit(:title, :image_name)
+    )
+  end
+
+  def set_menu
+    @menu_item = "texts-menu"
   end
 end

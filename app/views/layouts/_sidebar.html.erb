@@ -1,7 +1,6 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div id="navbar" class"navbar-collapse collapse">
-      <ul class="nav navbar-nav"> 
+      <%= content_tag "ul", class: "nav",
+                            id: "website-menu",
+                            data: {page: @menu_item} do %>
         <% if @admin %>
           <li><%= link_to 'French With Texts - Admin',
               root_path %></li>
@@ -9,23 +8,25 @@
           <li><%= link_to 'French With Texts',
               root_path %></li>
         <% end %>
-      </ul>
-      <ul class="nav navbar-nav navbar-right"> 
-        <li class="active"><%= link_to 'Home', controller: 'main' %></li>
-        <li><%= link_to 'Lessons', lessons_path %></li>
-        <li><%= link_to 'Texts', articles_path %></li>
-        <li><%= link_to 'Grammar', controller: 'grammar' %></li>
-        <li><%= link_to 'Vocabulary', 
-                          controller: 'vocabulary' %></li>
-        <li><%= link_to 'Projects',
-                          controller: 'projects' %></li>
-        <li><%= link_to 'Events',
-                          controller: 'events' %></li>
-        <li><%= link_to 'Contact',
-                          controller: :main, 
-                          action: :contact %></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+        <li class="active" id="home-menu"
+          ><%= link_to 'Home', controller: 'main' %></li>
+        <li id="lessons-menu"
+          ><%= link_to 'Lessons', lessons_path %></li>
+        <li id="texts-menu"
+          ><%= link_to 'Texts', articles_path %></li>
+        <li id="grammar-menu"
+          ><%= link_to 'Grammar', controller: 'grammar' %></li>
+        <li id="voc-menu"
+          ><%= link_to 'Vocabulary', controller: 'vocabulary' %>
+        </li>
+        <li id="projects-menu"
+          ><%= link_to 'Projects', controller: 'projects' %>
+        </li>
+        <li id="events-menu"
+          ><%= link_to 'Events', controller: 'events' %>
+        </li>
+        <li id="contact-menu"
+          ><%= link_to 'Contact', controller: :main,
+                                  action: :contact %>
+        </li>
+      <% end %>

@@ -1,4 +1,5 @@
 class VocabularyController < ApplicationController
+skip_before_action :require_admin, only: [:index]
   def index
     @admin = is_admin?
     render 'layouts/not_implemented'
@@ -6,6 +7,9 @@ class VocabularyController < ApplicationController
 private
   def is_admin?
     return false
+  end
+  def set_menu
+    @menu_item = "voc-menu"
   end
 end
 

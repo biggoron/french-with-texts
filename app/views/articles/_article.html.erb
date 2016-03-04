@@ -1,32 +1,38 @@
-<%= link_to article_path(article) do %>
-  <div class='article-thumnbail'>
+<div class='article-thumbnail'>
+  <%= link_to article_path(article) do %>
+  <div class='article-image'>
+   <%= image_tag article.image_name,
+                 size: "120x120",
+                 alt: article.image_name %> 
+  </div>
+  <div class='article-caption'>
     <span class='thumbnail-title'>
       <%= article.title %>
-    </span><br/>
+    </span>
     <% if @admin %>
-      <span class='thumbnail-online'>
-        <% if article.online %>
-          online <%= link_to 'Put Offline?',
-                              controller: 'articles',
-                              action: :offline,
-                              id: article.id
-                              %> 
-        <% else %>
-          offline <%= link_to 'Put Online?',
-                              controller: 'articles',
-                              action: :online,
-                              id: article.id %> 
+      <% if article.online %>
+        <%= link_to  controller: 'articles',
+                      action: :offline,
+                      id: article.id do %> 
+          <span class="glyphicon glyphicon-import"></span>
         <% end %>
-      </span><br/>
-      <span class='admin-links'>
-        <%= link_to 'Edit', edit_article_path(article) %>
-        <br/>
-        <%= link_to 'Destroy',
-              article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' }
-              %>
-      </span>
+      <% else %>
+        <%= link_to  controller: 'articles',
+                      action: :online,
+                      id: article.id do %> 
+          <span class="glyphicon glyphicon-export"></span>
+        <% end %>
+      <% end %>
+      <%= link_to edit_article_path(article) do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+      <br/>
+      <%= link_to article_path(article),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } do %>
+        <span class="glyphicon glyphicon-remove"></span>
+      <% end %>
     <% end %>
   </div>
-<% end %> 
+  <% end %> 
+</div>

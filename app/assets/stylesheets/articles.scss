@@ -1,3 +1,33 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.article-thumbnail {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 150px;
+  margin: 10px;
+  border: none;
+  box-shadow: 5px 5px 3px grey;
+}
+.article-thumbnail a {
+  text-decoration: none;
+  color: inherit;
+}
+.article-caption {
+  position: absolute;
+  bottom: 0;
+  min-height: 30px;
+  width: 100%;
+  text-align: center;
+  color: White;
+  background-color: #3B5999;
+}
+#add-article{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: White;
+  background-color: #3B5999;
+}

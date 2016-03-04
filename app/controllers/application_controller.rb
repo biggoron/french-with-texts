@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :adminness
+  before_action :set_menu
   before_action :require_admin
 
   def index
@@ -39,6 +40,9 @@ class ApplicationController < ActionController::Base
     else
       @admin = false
     end
+  end
+  def set_menu
+    @menu_item = "caca-menu"
   end
   def require_admin
     unless session[:user_type] == 'admin'

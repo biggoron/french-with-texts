@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+skip_before_action :require_admin, only: [:index]
   def index
     @admin = is_admin?
     render 'layouts/not_implemented'
@@ -6,6 +7,9 @@ class EventsController < ApplicationController
 private
   def is_admin?
     return false
+  end
+  def set_menu
+    @menu_item = "events-menu"
   end
 end
 
