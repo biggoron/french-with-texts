@@ -11,20 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215093745) do
+ActiveRecord::Schema.define(version: 20160424035759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "article_commentaries", force: :cascade do |t|
-    t.string   "commenter"
-    t.text     "body"
-    t.integer  "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "article_commentaries", ["article_id"], name: "index_article_commentaries_on_article_id", using: :btree
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -35,16 +25,31 @@ ActiveRecord::Schema.define(version: 20160215093745) do
     t.text     "image_name"
   end
 
-  create_table "remarks", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "type"
-    t.integer  "article_id"
+  create_table "definitions", force: :cascade do |t|
+    t.string   "expression"
+    t.text     "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "remarks", ["article_id"], name: "index_remarks_on_article_id", using: :btree
+  create_table "links", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "address"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "remarks", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "category"
+    t.integer  "writing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "remarks", ["writing_id"], name: "index_remarks_on_writing_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.integer  "level"
@@ -53,6 +58,15 @@ ActiveRecord::Schema.define(version: 20160215093745) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "translations", force: :cascade do |t|
+    t.string   "expression"
+    t.integer  "definition_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "translations", ["definition_id"], name: "index_translations_on_definition_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -73,7 +87,7 @@ ActiveRecord::Schema.define(version: 20160215093745) do
 
   add_index "writings", ["article_id"], name: "index_writings_on_article_id", using: :btree
 
-  add_foreign_key "article_commentaries", "articles"
-  add_foreign_key "remarks", "articles"
+  add_foreign_key "remarks", "writings"
+  add_foreign_key "translations", "definitions"
   add_foreign_key "writings", "articles"
 end

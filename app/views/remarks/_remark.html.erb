@@ -1,0 +1,24 @@
+<div class="panel panel-default remark-pan">
+  <div class="panel-heading">
+    <%= remark.title %>
+  </div>
+  <div class="panel-body">
+    <%= remark.body %>
+  </div>
+  <% if @admin %>
+  <%= link_to 'Edit', [
+    :edit, 
+    remark.writing.article, 
+    remark.writing,
+    remark
+    ]
+  %>
+  <%= link_to 'Destroy', [
+    remark.writing.article,
+    remark.writing,
+    remark],
+    method: :delete,
+    data: { confirm: 'Are you sure?' }%>
+  <% end %>
+</div>
+

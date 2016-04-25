@@ -6,7 +6,7 @@ skip_before_action :adminness, only: [:admin_login, :admin_logout]
 skip_before_action :require_admin, only: [:index, :contact, :admin_login, :admin_logout]
   def index
     @menu_item = "home-menu"
-    render 'layouts/not_implemented'
+    render 'layouts/home_page'
   end
   def contact
     @menu_item = "contact-menu"

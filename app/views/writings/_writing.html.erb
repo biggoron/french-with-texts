@@ -1,20 +1,25 @@
-<p>
-  <h3><%= writing.abs_lvl %></h3>
-  <h3><%= writing.rel_lvl %></h3>
-</p>
-<p>
-  <strong>Body: </strong><br/>
-  <%= writing.body %>
-</p>
-<p>
-  <strong>Translation: </strong><br/>
-  <%= writing.translation %>
-</p>
+<div class="tab-pane fade" id="writing<%= writing.id %>">
+  <div class="container">
+    <div class="col-md-6">
+      <%= writing.body %> 
+    </div>
+    <div class="col-md-6">
+      <%= writing.translation %> 
+    </div>
+  </div>
+  <div id='remarks' class="container">
+    <% for remark in writing.remarks do%>
+      <%= render remark %>
+    <% end %>
+  </div> 
 
-<% if @admin %>
+  <% if @admin %>
+  <%= link_to 'Add remark',
+    new_article_writing_remark_path(writing.article, writing)%>
   <%= link_to 'Edit', [:edit, writing.article, writing]%>
   <%= link_to 'Destroy', [writing.article, writing],
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' }%>
-<% end %>
+                         method: :delete,
+                         data: { confirm: 'Are you sure?' }%>
+  <% end %>
+</div> 
                     

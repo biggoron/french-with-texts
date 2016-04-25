@@ -20,7 +20,6 @@
 html, body {
   height: 100%;
   font-family: verdana, arial, sans-serif;
-  color: #555555;
 }
 
 .nav {
@@ -28,9 +27,6 @@ html, body {
   font-size: 13px;
 }
 
-a {
-  color: #222222;
-}
 
 a:hover {
   text-decoration: none;
@@ -82,4 +78,16 @@ a:hover {
 
 #sidebar .nav li.active {
   background-color: #151515;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.btn-primary {
+  color: white;
+}
+.jumbotron {
+  padding: 20px;
+  text-align: center;
 }

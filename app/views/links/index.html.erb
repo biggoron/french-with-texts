@@ -1,0 +1,12 @@
+<h1>リンクス</h1>
+
+<% @links.each do |link| %>
+  <%= render partial: 'links/link',
+              locals: {link: link}
+  %>  
+<% end %>
+<br>
+
+<% if @admin %>
+  <%= link_to 'New Link', new_link_path %>
+<% end %>

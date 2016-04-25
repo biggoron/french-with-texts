@@ -1,0 +1,17 @@
+<%= form_for([@article, @writing, @remark]) do |f|%> 
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :category %>
+    <%= f.number_field :category %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

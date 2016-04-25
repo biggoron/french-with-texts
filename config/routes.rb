@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :links
   root 'main#index'
-  resources :lessons, :grammar_rules, :tags,
-           :commentary, :projects
+  resources :lessons, :grammar_rules, :tags, :projects
   resources :articles do
-    resources :writings, :remarks
+    resources :writings do
+      resources :remarks
+    end
   end
   get 'articles/online/:id' => 'articles#online'
   get 'articles/offline/:id' => 'articles#offline'

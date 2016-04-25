@@ -9,24 +9,27 @@
               root_path %></li>
         <% end %>
         <li class="active" id="home-menu"
-          ><%= link_to 'Home', controller: 'main' %></li>
+          ><%= link_to 'ホーム', controller: 'main' %></li>
         <li id="lessons-menu"
-          ><%= link_to 'Lessons', lessons_path %></li>
+          ><%= link_to 'レッスン', lessons_path %></li>
         <li id="texts-menu"
-          ><%= link_to 'Texts', articles_path %></li>
+          ><%= link_to 'テキスト', articles_path %></li>
         <li id="grammar-menu"
-          ><%= link_to 'Grammar', controller: 'grammar' %></li>
+          ><%= link_to '文法', controller: 'grammar' %></li>
         <li id="voc-menu"
-          ><%= link_to 'Vocabulary', controller: 'vocabulary' %>
+          ><%= link_to '単語', controller: 'vocabulary' %>
         </li>
         <li id="projects-menu"
-          ><%= link_to 'Projects', controller: 'projects' %>
+          ><%= link_to 'プロジェクト', controller: 'projects' %>
         </li>
         <li id="events-menu"
-          ><%= link_to 'Events', controller: 'events' %>
+          ><%= link_to 'イベント', controller: 'events' %>
         </li>
         <li id="contact-menu"
-          ><%= link_to 'Contact', controller: :main,
+          ><%= link_to '連絡', controller: :main,
                                   action: :contact %>
+        </li>
+        <li id="links-menu"
+          ><%= link_to 'リンクス', links_path%>
         </li>
       <% end %>
