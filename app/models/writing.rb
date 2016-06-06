@@ -1,9 +1,10 @@
 class Writing < ActiveRecord::Base
-  belongs_to :article
-  has_many :remarks, dependent: :destroy
+  belongs_to  :article
+  has_many    :remarks,  dependent:  :destroy
   def diff
     return level_to_text(self.rel_lvl)
   end
+  validates :title, presence: true
 private
   def level_to_text(lvl)
     corr =
