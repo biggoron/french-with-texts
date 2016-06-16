@@ -1,14 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @link.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @link.description %>
-</p>
-
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+<div class="article-box">
+  <h1 class="article-header"><%=@article.title%></h1>
+  <hr/>
+  <%= render @filepath %>
+</div>

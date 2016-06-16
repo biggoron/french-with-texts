@@ -1,7 +1,10 @@
 class MainController < ApplicationController
+
+# Defines admin account
 http_basic_authenticate_with name: "admin",
                              password: "omelettedefromage",
                              only: [:admin_login, :admin_logout]
+# No need to be admin to login as admin
 skip_before_action :adminness, only: [:admin_login, :admin_logout]
 skip_before_action :require_admin, only: [:index, :contact, :admin_login, :admin_logout]
   def index

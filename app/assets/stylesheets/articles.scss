@@ -24,13 +24,16 @@
   color: White;
   background-color: #3B5999;
 }
+.thumbnail-title {
+  vertical-align: middle; 
+  font-weight: bold;
+}
 #add-article{
   position: relative;
+  vertical-align: center;
+  text-align: middle;
   height: 100%;
   width: 100%;
-  color: White;
+  color: white;
   background-color: #3B5999;
-}
-#remarks{
-  margin-top: 10px;
 }

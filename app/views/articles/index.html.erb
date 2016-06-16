@@ -1,11 +1,9 @@
 <div class='display-block' id='display-articles'>
   <h1>Listing articles</h1>
   <% @articles.each do |article| %>
-    <% if @admin or article.online %>
     <%= render partial: 'articles/article',
                 locals: {article: article}
     %>
-    <% end %>
   <% end %>
 
   <% if @admin %>

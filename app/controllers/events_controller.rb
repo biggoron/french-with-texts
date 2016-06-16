@@ -1,14 +1,23 @@
 class EventsController < ApplicationController
+# See article's controller
 skip_before_action :require_admin, only: [:index]
+
   def index
-    @admin = is_admin?
-    render 'layouts/not_implemented'
+  # Nothing here yet
+    if @admin
+      @events = Article.where(layout: "event")
+    else
+      @events = Article.where(layout: "event",
+                              online: true)
+    end
+  end
+  def show
+    @article = Article.find(params[:id])
+    @filepath = "texts/events/#{@article.filename}.html"
   end
 private
-  def is_admin?
-    return false
-  end
   def set_menu
+  # See ActionController
     @menu_item = "events-menu"
   end
 end

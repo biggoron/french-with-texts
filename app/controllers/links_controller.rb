@@ -1,9 +1,19 @@
 class LinksController < ApplicationController
-skip_before_action :require_admin, only: [:index]
-  # GET /links
-  # GET /links.json
+# See article's controller
+skip_before_action :require_admin, only: [:index, :show]
+
   def index
-    @links = Link.all
+    if @admin
+      @articles = Article.where(layout: "link")
+    else
+      @articles = Article.where(online: true,
+                                layout: "link")
+    end
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    @filepath = "texts/links/#{@article.filename}"
   end
 
   # GET /links/new
@@ -27,8 +37,6 @@ skip_before_action :require_admin, only: [:index]
     end
   end
 
-  # PATCH/PUT /links/1
-  # PATCH/PUT /links/1.json
   def update
     @link = Link.find(params[:id])
     if @link.update(link_params)
@@ -38,8 +46,6 @@ skip_before_action :require_admin, only: [:index]
     end
   end
 
-  # DELETE /links/1
-  # DELETE /links/1.json
   def destroy
     @link = Link.find(params[:id])
     @link.destroy
@@ -52,6 +58,7 @@ skip_before_action :require_admin, only: [:index]
     end
 
     def set_menu 
+  # See ActionController
       @menu_item = "links-menu"
     end
 end

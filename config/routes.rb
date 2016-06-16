@@ -1,22 +1,26 @@
 Rails.application.routes.draw do
-  resources :links
   root 'main#index'
-  resources :lessons, :grammar_point, :projects
-  resources :articles do
-    resources :writings do
-      resources :remarks
-    end
-    resources :exercices
-  end
+  resources :lessons
+  resources :links
+  resources :grammar
+  resources :articles
+  get 'grammar/index' => 'grammar'
+  get 'grammar/:id' => 'grammar#show'
+  get 'lessons/index' => 'lessons'
+  get 'lessons/:id' => 'lessons#show'
+  get 'vocabulary/index' => 'vocabulary'
+  get 'vocabulary/:id' => 'vocabulary#show'
+  get 'events/index' => 'events'
+  get 'events/:id' => 'events#show'
+  get 'links/index' => 'links'
+  get 'links/:id' => 'links#show'
+  get 'projects/index' => 'projects'
+  get 'projects/:id' => 'projects#show'
   get 'articles/online/:id' => 'articles#online'
   get 'articles/offline/:id' => 'articles#offline'
   get 'contact' => 'main#contact'
   get 'admin_login' => 'main#admin_login'
   get 'admin_logout' => 'main#admin_logout'
-  get 'vocabulary/index' => 'vocabulary'
-  get 'grammar/index' => 'grammar'
-  get 'events/index' => 'events'
-  get 'projects/index' => 'projects'
 
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".

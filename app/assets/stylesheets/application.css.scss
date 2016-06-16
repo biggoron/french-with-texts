@@ -32,6 +32,11 @@ a:hover {
   text-decoration: none;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .wrapper, .row{
   height: 100%;
   margin-left: 0;
@@ -63,12 +68,17 @@ a:hover {
 #sidebar {
   padding: 0px;
   padding-top: 15px;
+  text-align: center;
 }
 
+
 #sidebar, #sidebar a {
-  color: #ffffff;
+  color: white;
+  font-size: 2.5vw;
+  line-height: 1.5vw;
   background-color: transparent;
   text-shadow: 0 0 2px #000000;
+  font-family: Anzumoji;
   padding-left: 5;
 }
 
@@ -80,14 +90,54 @@ a:hover {
   background-color: #151515;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
+
 .btn-primary {
+  text-decoration: none;
   color: white;
 }
 .jumbotron {
   padding: 20px;
   text-align: center;
+}
+#menu-banner {
+  display: block;
+  overflow: auto;
+}
+#menu-flag {
+  max-width: 100%;
+  float: top;
+  display: block;
+}
+#menu-title {
+  font-family: Anzumoji;
+  float: bottom;
+  display: block;
+  font-size: 3.1vw;
+  line-height: 3.1vw;
+  text-align: center;
+}
+hr.hr-fade {
+  border: 0;
+  height: 0;
+  box-shadow: 0 0 10px 1px black;
+}
+hr.hr-fade {
+  content: "\00a0";
+}
+@font-face {
+  font-family: Anzumoji;
+  src: font-url('Anzumoji.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Emblema;
+  src: font-url('Emblema.ttf') format('truetype');
+}
+
+.article-box {
+  background-color: white;
+  padding: 15px;
+  margin: 15px;
+  max-width: 700px;
+  min-height: 90%;
 }

@@ -2,22 +2,34 @@
                             id: "website-menu",
                             data: {page: @menu_item} do %>
         <% if @admin %>
-          <li><%= link_to 'French With Texts - Admin',
-              root_path %></li>
+          <li id="menu-banner">
+          <%= link_to(root_path) do %>
+          <%= image_tag("flag.png", id: "menu-flag") %> 
+          <span id="menu-title"> みんなの<br/>フランス語</span>
+          <% end %>
+          </li>
         <% else %>
-          <li><%= link_to 'French With Texts',
-              root_path %></li>
+          <li id="menu-banner">
+          <%= link_to(root_path) do %>
+          <%= image_tag("flag.png", id: "menu-flag") %> 
+          <span id="menu-title"> みんなの<br/>フランス語</span>
+          <% end %>
+          </li>
         <% end %>
+        <hr class="hr-fade"/>
+        <br/>
         <li class="active" id="home-menu"
           ><%= link_to 'ホーム', controller: 'main' %></li>
         <li id="lessons-menu"
           ><%= link_to 'レッスン', lessons_path %></li>
+        <% if @admin %>
         <li id="texts-menu"
           ><%= link_to 'テキスト', articles_path %></li>
+        <% end %>
         <li id="grammar-menu"
           ><%= link_to '文法', controller: 'grammar' %></li>
         <li id="voc-menu"
-          ><%= link_to '単語', controller: 'vocabulary' %>
+          ><%= link_to '語彙', controller: 'vocabulary' %>
         </li>
         <li id="projects-menu"
           ><%= link_to 'プロジェクト', controller: 'projects' %>

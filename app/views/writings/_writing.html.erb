@@ -1,15 +1,16 @@
 <div class="tab-pane fade" id="writing<%= writing.id %>">
   <div class="container">
     <div class="col-md-6">
-      <%= writing.body %> 
+      <%= render :partial =>
+      "texts/articles/#{writing.article.normalize}/#{writing.rel_lvl}/body.html" %> 
     </div>
     <div class="col-md-6">
-      <%= writing.translation %> 
+      <%= render :partial =>
+      "texts/articles/#{writing.article.normalize}/#{writing.rel_lvl}/translation.html" %> 
     </div>
   </div>
   <div id='remarks' class="container">
     <% for remark in writing.remarks do%>
-      <%= render remark %>
     <% end %>
   </div> 
 

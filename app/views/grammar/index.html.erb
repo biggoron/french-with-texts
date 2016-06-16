@@ -1,2 +1,9 @@
-<h1><%= @display_text %></h1>
+<h1>Grammar</h1>
+
+<% @articles.each do |article| %>
+  <%= render partial: 'articles/article',
+              locals: {article: article}
+  %>
+<% end %>
+
 
