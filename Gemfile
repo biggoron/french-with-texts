@@ -18,6 +18,8 @@ gem 'autoprefixer-rails'
 
 gem 'rails_12factor'
 
+gem 'ahoy_matey'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

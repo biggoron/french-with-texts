@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require init
 //= require articles
+//= require ahoy
 
