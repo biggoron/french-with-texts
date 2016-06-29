@@ -1,6 +1,6 @@
-class LessonsController < ApplicationController
+class LessonsController < ArticlesController 
 # See article's controller
-skip_before_action :require_admin, only: [:index]
+skip_before_action :require_admin, only: [:index, :show]
 
   def index
     if @admin

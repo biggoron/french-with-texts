@@ -13,7 +13,6 @@ skip_before_action :require_admin, only: [:index, :contact, :admin_login, :admin
   end
   def contact
     @menu_item = "contact-menu"
-    render 'layouts/not_implemented'
   end
   def admin_login
     session[:user_type] = :admin
