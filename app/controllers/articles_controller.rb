@@ -96,6 +96,21 @@ skip_before_action :require_admin, only: [:show]
     @article.save
     redirect_to articles_path
   end
+
+  def packet_download
+    apkg = params[:file]
+    ext = params[:ext]
+    if ext == "apkg"
+      path = File.join(Rails.root, 'app', 'assets', 'apkg',
+      "#{apkg}.apkg")
+      send_file path, disposition: 'attachment' 
+    else
+      #TODO: make a 404
+      send_file "/layouts/404.html",
+                type: "text/html; charset=utf-8",
+                status: 404
+    end
+  end
 private
   def article_params
   # Get the form data when creating or updating article

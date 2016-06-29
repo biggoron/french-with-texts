@@ -99,6 +99,10 @@ a {
   padding: 20px;
   text-align: center;
 }
+.jumbotron p {
+  font-size: 22px;
+  line-height: 26px;
+}
 #menu-banner {
   display: block;
   overflow: auto;
@@ -140,5 +144,9 @@ hr.hr-fade {
   margin: 15px;
   max-width: 700px;
   min-height: 90%;
-  font-size: 16px;
+}
+
+.article-box p {
+  font-size: 18px;
+  line-height: 20px;
 }

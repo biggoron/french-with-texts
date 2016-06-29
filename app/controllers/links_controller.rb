@@ -1,6 +1,6 @@
-class LinksController < ApplicationController
+class LinksController < ArticlesController 
 # See article's controller
-skip_before_action :require_admin, only: [:index, :show]
+skip_before_action :require_admin, only: [:index, :show, :packet_download]
 
   def index
     if @admin
@@ -14,6 +14,7 @@ skip_before_action :require_admin, only: [:index, :show]
   def show
     @article = Article.find(params[:id])
     @filepath = "texts/links/#{@article.filename}"
+    @menu_item = "links-menu"
   end
 
   # GET /links/new
@@ -51,6 +52,7 @@ skip_before_action :require_admin, only: [:index, :show]
     @link.destroy
     redirect_to links_path
   end
+
 
   private
     def link_params

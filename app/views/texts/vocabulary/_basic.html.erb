@@ -1,0 +1,18 @@
+<p>
+基礎挨拶の語彙を紹介しているAnkiの語彙パケットをできました！！！
+</p>
+<p>
+Ankiとはなにものですか分からない方は<%= link_to 'リンク',
+links_index_path %>でAnkiについての記事を調べてください。
+</p>
+<p>シェアパケットとしてみんなのフランス語1-basic
+wordsと名づけました。</p>
+<p>直接のダウンロードはこちら：
+            <%= button_to "基礎挨拶語彙", {
+              controller: "links",
+              action: "packet_download",
+              id: params[:id],
+              file: "basic.apkg"},
+              method: :get,
+              class: 'btn btn-large btn-primary' %>
+<hr/>

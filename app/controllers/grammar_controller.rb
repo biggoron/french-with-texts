@@ -9,6 +9,7 @@ skip_before_action :require_admin, only: [:index, :show]
       @articles = Article.where(online: true,
                                 layout: "grammar")
     end
+    render 'layouts/not_implemented' if @articles.length == 0
   end
 
   def show

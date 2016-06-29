@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'main#index'
   resources :lessons
-  resources :links
   resources :grammar
   resources :articles
   get 'grammar/index' => 'grammar'
@@ -21,6 +20,8 @@ Rails.application.routes.draw do
   get 'contact' => 'main#contact'
   get 'admin_login' => 'main#admin_login'
   get 'admin_logout' => 'main#admin_logout'
+
+  get 'links/packet_download/:id(.:file)(.:ext)' => 'links#packet_download'
 
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".

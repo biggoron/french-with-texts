@@ -5,11 +5,12 @@ skip_before_action :require_admin, only: [:index]
   def index
   # Nothing here yet
     if @admin
-      @events = Article.where(layout: "event")
+      @articles = Article.where(layout: "event")
     else
-      @events = Article.where(layout: "event",
+      @articles = Article.where(layout: "event",
                               online: true)
     end
+    render 'layouts/not_implemented' if @articles.length == 0
   end
   def show
     @article = Article.find(params[:id])
