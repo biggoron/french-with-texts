@@ -54,6 +54,21 @@
   }
 }
 
-.conjugaison-table tr th, td {
-  background-color: #F2F2F2;
+.conjugaison-table tr {
+  th, td {
+    background-color: #F2F2F2;
+
+    .focus {
+      color: red;
+      font-weight: 600;
+    }
+  }
+  th {
+    font-weight: 600;
+  }
+}
+
+.focus {
+  color: red;
+  font-weight: 600;
 }

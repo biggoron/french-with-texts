@@ -1,0 +1,26 @@
+.illu-article {
+  background-color: #F2F2F2;
+  padding: 10px;
+  .illu-img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100;
+    float: top;
+  }
+  .illu-legend {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    float: bottom;
+    padding: 10px;
+      .speaker {
+				text-decoration: underline;
+        font-weight: 600;
+      }
+      .hint {
+				color: 222255;
+        font-size: 14px;
+      }
+  }
+}
