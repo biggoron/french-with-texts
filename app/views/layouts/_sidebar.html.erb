@@ -1,47 +1,42 @@
-      <%= content_tag "ul", class: "nav",
-                            id: "website-menu",
-                            data: {page: @menu_item} do %>
-        <% if @admin %>
-          <li id="menu-banner">
-          <%= link_to(root_path) do %>
-          <%= image_tag("flag.png", id: "menu-flag") %> 
-          <span id="menu-title"> みんなの<br/>フランス語</span>
-          <% end %>
-          </li>
-        <% else %>
-          <li id="menu-banner">
-          <%= link_to(root_path) do %>
-          <%= image_tag("flag.png", id: "menu-flag") %> 
-          <span id="menu-title"> みんなの<br/>フランス語</span>
-          <% end %>
-          </li>
-        <% end %>
-        <hr class="hr-fade"/>
-        <br/>
-        <li class="active" id="home-menu"
-          ><%= link_to 'ホーム', controller: 'main' %></li>
-        <li id="lessons-menu"
-          ><%= link_to 'レッスン', lessons_path %></li>
-        <% if @admin %>
-        <li id="texts-menu"
-          ><%= link_to 'テキスト', articles_path %></li>
-        <% end %>
-        <li id="grammar-menu"
-          ><%= link_to '文法', controller: 'grammar' %></li>
-        <li id="voc-menu"
-          ><%= link_to '語彙', controller: 'vocabulary' %>
-        </li>
-        <li id="projects-menu"
-          ><%= link_to 'プロジェクト', controller: 'projects' %>
-        </li>
-        <li id="events-menu"
-          ><%= link_to 'イベント', controller: 'events' %>
-        </li>
-        <li id="contact-menu"
-          ><%= link_to '連絡', controller: :main,
-                                  action: :contact %>
-        </li>
-        <li id="links-menu"
-          ><%= link_to 'リンクス', links_index_path%>
-        </li>
-      <% end %>
+<%= content_tag "ul", class: "nav",
+                      id: "website-menu",
+                      data: {page: @menu_item} do %>
+  <li id="menu-banner">
+    <%= link_to(root_path) do %>
+      <div id="menu-flag">
+        <%= image_tag("flag.png") %> 
+      </div>
+      <div id="menu-title"> みんなの<br/>フランス語</div>
+    <% end %>
+  </li>
+  
+  <hr class="hr-fade"/>
+  <br/>
+
+  <li class="active" id="home-menu">
+    <%= link_to 'ホーム', controller: 'main' %></li>
+  <li id="lessons-menu">
+    <%= link_to 'レッスン', lessons_path %></li>
+  <% if @admin %>
+  <li id="texts-menu">
+    <%= link_to 'Articles', articles_path %></li>
+  <% end %>
+  <li id="grammar-menu">
+    <%= link_to '文法', controller: 'grammar' %></li>
+  <li id="voc-menu">
+    <%= link_to '語彙', controller: 'vocabulary' %>
+  </li>
+  <li id="projects-menu">
+    <%= link_to 'プロジェクト', controller: 'projects' %>
+  </li>
+  <li id="events-menu">
+    <%= link_to 'イベント', controller: 'events' %>
+  </li>
+  <li id="contact-menu">
+    <%= link_to '連絡', controller: :main,
+                            action: :contact %>
+  </li>
+  <li id="links-menu">
+    <%= link_to 'リンクス', links_index_path%>
+  </li>
+<% end %>

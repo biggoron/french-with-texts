@@ -1,0 +1,46 @@
+@import "colors";
+@import "fonts";
+
+
+
+#sidebar {
+  padding: 0;
+  padding-top: 15px;
+  text-align: center;
+  #menu-banner {
+    overflow: auto;
+    #menu-flag {
+      display: inline-block;
+      max-width: 100px;
+      img {
+        width: 100%;
+      }
+    }
+    #menu-title {
+      font-family: Anzumoji;
+      display: inline-block;
+      font-size: 3.1vw;
+      line-height: 3.1vw;
+      text-align: center;
+    }
+  }
+  a {
+    color: white;
+    font-size: 2.5vw;
+    line-height: 1.5vw;
+    background-color: transparent;
+    text-shadow: 0 0 2px #000000;
+    font-family: Anzumoji;
+  }
+  .nav {
+    li {
+      &:hover {
+        background-color: $dark-hl;
+      }
+      &:active {
+        background-color: $dark-active;
+      }
+    } 
+  }
+}
+

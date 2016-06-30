@@ -40,6 +40,12 @@ html, body, #page-wrapper {
   padding: 15px;
 }
 
+#sidebar {
+  padding: 0;
+  padding-top: 15px;
+  text-align: center;
+}
+
 a{
   text-decoration: none;
   color: black;
@@ -72,6 +78,7 @@ a{
     line-height: 26px;
   }
 }
+
 
 hr.hr-fade {
   border: 0;

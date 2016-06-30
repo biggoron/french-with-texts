@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// The thumbnail
+
 .article-thumbnail {
   display: inline-block;
   position: relative;
@@ -10,10 +12,10 @@
   margin: 10px;
   border: none;
   box-shadow: 5px 5px 3px grey;
-}
-.article-thumbnail a {
-  text-decoration: none;
-  color: inherit;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 .article-caption {
   position: absolute;
@@ -36,4 +38,22 @@
   width: 100%;
   color: white;
   background-color: #3B5999;
+}
+
+// The text
+
+.article-box {
+  background-color: white;
+  padding: 15px;
+  margin: 15px;
+  max-width: 700px;
+  min-height: 90%;
+  p, li, th, td{
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.conjugaison-table tr th, td {
+  background-color: #F2F2F2;
 }
