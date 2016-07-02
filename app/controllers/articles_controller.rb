@@ -33,9 +33,9 @@ skip_before_action :require_admin, only: [:show]
     when "link"
       @menu_item = "links-menu"
       controller = :links
-    when "project"
-      @menu_item = "projects-menu"
-      controller = :projects
+    when "prononciation"
+      @menu_item = "prononciation-menu"
+      controller = :prononciation
     end
     redirect_to url_for(controller: controller,
                        action: :show,
