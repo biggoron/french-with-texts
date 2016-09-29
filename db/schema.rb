@@ -56,16 +56,6 @@ ActiveRecord::Schema.define(version: 20160629083547) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "remarks", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "category"
-    t.integer  "writing_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "remarks", ["writing_id"], name: "index_remarks_on_writing_id", using: :btree
-
   create_table "visits", force: :cascade do |t|
     t.string   "visit_token"
     t.string   "visitor_token"
@@ -98,17 +88,5 @@ ActiveRecord::Schema.define(version: 20160629083547) do
   add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
   add_index "visits", ["visit_token"], name: "index_visits_on_visit_token", unique: true, using: :btree
 
-  create_table "writings", force: :cascade do |t|
-    t.integer  "abs_lvl"
-    t.integer  "rel_lvl"
-    t.integer  "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "writings", ["article_id"], name: "index_writings_on_article_id", using: :btree
-
   add_foreign_key "exercices", "articles"
-  add_foreign_key "remarks", "writings"
-  add_foreign_key "writings", "articles"
 end
