@@ -40,6 +40,31 @@ html, body, #page-wrapper {
   padding: 15px;
 }
 
+#banner {
+  max-height: 150px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  a#banner-link {
+    display: inline-block;
+    max-height: 150px;
+    width: 100%;
+    img {
+      display: inline-block;
+      max-height: 150px;
+      max-width: 30%;
+    }
+    div#menu-title {
+      display: inline-block;
+      vertical-align: middle;
+      min-width: 60%;
+      font-family: Anzumoji;
+      font-size: 7.0vw;
+      text-align: center;
+    }
+  }
+}
+
 a{
   text-decoration: none;
   color: black;

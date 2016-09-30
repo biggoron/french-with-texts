@@ -1,18 +1,6 @@
 <%= content_tag "ul", class: "nav",
                       id: "website-menu",
                       data: {page: @menu_item} do %>
-  <li id="menu-banner">
-    <%= link_to(root_path) do %>
-      <div id="menu-flag">
-        <%= image_tag("dog_transparent.png") %> 
-      </div>
-      <div id="menu-title">ダンのプチブログ</div>
-    <% end %>
-  </li>
-  
-  <hr class="hr-fade"/>
-  <br/>
-
   <li class="active" id="home-menu">
     <%= link_to 'ホーム', controller: 'main' %></li>
   <li id="lessons-menu">

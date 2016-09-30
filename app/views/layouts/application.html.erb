@@ -8,7 +8,7 @@
   <meta name="author" content="Dan Ringwald">
   <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-  <%= favicon_link_tag 'dog_transparent.png', type: 'image/png' %>
+  <%= favicon_link_tag 'mimosa_dog.png', type: 'image/png' %>
   <title>ダンのプチブログ</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -16,13 +16,18 @@
 </head>
 <body>
   <div id="page-wrapper">
-    <nav class="column col-sm-2"
-		      id="sidebar">
-		      <%= render 'layouts/sidebar' %>
-    </nav>
-    <div class="column col-sm-10" id="main">
+    <div id="banner" class="container-fluid">
+      <%= link_to(root_path, id: 'banner-link') do %>
+        <%= image_tag("mimosa_dog.png", id: 'banner-icon') %> 
+        <div id="menu-title">ダンのプチブログ</div>
+      <% end %>
+    </div>
+    <div class="row" id="main">
 		      <%= yield %>
     </div>
+    <nav class="row" id="sidebar">
+		      <%= render 'layouts/sidebar' %>
+    </nav>
   </div>
 </body>
 </html>

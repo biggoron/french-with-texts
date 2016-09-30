@@ -1,4 +1,31 @@
-$light-background: #e9eaed; 
-$dark-background: #444444;
+// Theme
+// Base
+$blue: #0D56FF;
+$light-blue: #427BFF;
+$xlight-blue: #93B3FC;
+$dark-blue: #0137B3;
+$xdark-blue: #031F60;
+// Complementary
+$mimosa: #FFAA00;
+$light-mimosa: #FFB82B;
+$xlight-mimosa: #FFD788;
+$dark-mimosa: $mimosa;
+$xdark-mimosa: #8F5F00;
+//orange
+$orange: #FF7400;
+$light-orange: #FF8B2B;
+$xlight-orange: #FFBE88;
+$dark-orange: $orange;
+$xdark-orange: #8F4100;
+//yellow
+$yellow: #FFD300;
+$light-yellow: #FFDB2B;
+$xlight-yellow: #FFEB88;
+$dark-yellow: $yellow;
+$xdark-yellow: #8F7700;
+
+// Elements
+$light-background: $xlight-yellow;
+$dark-background: $xlight-blue;
 $dark-hl: #1A1A1A;
 $dark-active: #151515;
