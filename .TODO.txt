@@ -1,0 +1,11 @@
+define the objects to be created
+link the new objects to the current resources
+make new menu
+check the menu active state
+beautify section's titles
+beautify download button
+change menu on small devices (when online)
+define their representation as rows to be displayed in index form
+define ajax search in collapsible tab
+define their respective pages
+make the js anim to hide menu
