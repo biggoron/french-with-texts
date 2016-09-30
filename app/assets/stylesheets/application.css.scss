@@ -20,9 +20,15 @@
 @import "colors";
 @import "fonts";
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
 @mixin background-box {
   height: 100%;
   font-family: verdana, arial, sans-serif;
+  background-color: $dark-background;
+  padding: 0px;
 }
 
 
@@ -30,14 +36,11 @@ html, body, #page-wrapper {
   @include background-box;
 }
 
-#page-wrapper{
-  @include background-box;
-  background-color: $dark-background;
-}
-
 #main {
   background-color: $light-background;
-  padding: 15px;
+  width: 100%;
+  padding: 10px;
+  margin: 0px;
 }
 
 #banner {
@@ -62,6 +65,53 @@ html, body, #page-wrapper {
       font-size: 7.0vw;
       text-align: center;
     }
+  }
+}
+
+#nav-shadow{
+  height: 50px;
+  vertical-align: middle;
+  padding: 0px;
+  width: 100%;
+}
+
+#footer-menu{
+  height: 50px;
+  background-color: $dark-background;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  #website-menu {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: baseline;
+    li {
+      width: 12%;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0px;
+      margin: 0px;
+      &:hover {
+        background-color: $xdark-blue;
+      }
+      &:active {
+        background-color: $xlight-yellow;
+      }
+      a {
+        display: inline-block;
+				vertical-align: middle;
+        font-size: 2.0vw;
+        background-color: transparent;
+        font-family: Anzumoji;
+      }
+    } 
   }
 }
 
@@ -92,6 +142,7 @@ a{
 .jumbotron {
   padding: 20px;
   text-align: center;
+  background-color: white;
   p {
     font-size: 22px;
     line-height: 26px;

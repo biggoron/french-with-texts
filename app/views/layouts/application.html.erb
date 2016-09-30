@@ -8,7 +8,7 @@
   <meta name="author" content="Dan Ringwald">
   <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-  <%= favicon_link_tag 'mimosa_dog.png', type: 'image/png' %>
+  <%= favicon_link_tag 'lunettes.png', type: 'image/png' %>
   <title>ダンのプチブログ</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,15 +18,44 @@
   <div id="page-wrapper">
     <div id="banner" class="container-fluid">
       <%= link_to(root_path, id: 'banner-link') do %>
-        <%= image_tag("mimosa_dog.png", id: 'banner-icon') %> 
+        <%= image_tag("lunettes.png", id: 'banner-icon') %> 
         <div id="menu-title">ダンのプチブログ</div>
       <% end %>
     </div>
     <div class="row" id="main">
 		      <%= yield %>
     </div>
-    <nav class="row" id="sidebar">
-		      <%= render 'layouts/sidebar' %>
+    <div id="nav-shadow" class="row">
+    </div>
+    <nav class="row" id="footer-menu">
+      <%= content_tag "ul", id: "website-menu", data: {page: @menu_item} do %>
+        <li class="active" id="home-menu">
+          <%= link_to 'ホーム', controller: 'main' %></li>
+        <li id="lessons-menu">
+          <%= link_to 'レッスン', lessons_path %></li>
+        <% if @admin %>
+          <li id="texts-menu">
+            <%= link_to 'Articles', articles_path %></li>
+        <% end %>
+        <li id="grammar-menu">
+          <%= link_to '文法', controller: 'grammar' %></li>
+        <li id="voc-menu">
+          <%= link_to '語彙', controller: 'vocabulary' %>
+        </li>
+        <li id="prononciation-menu">
+          <%= link_to '発音', controller: 'prononciation' %>
+        </li>
+        <li id="events-menu">
+          <%= link_to 'イベント', controller: 'events' %>
+        </li>
+        <li id="contact-menu">
+          <%= link_to '連絡', controller: :main,
+                                  action: :contact %>
+        </li>
+        <li id="links-menu">
+          <%= link_to 'リンクス', links_index_path%>
+        </li>
+      <% end %>
     </nav>
   </div>
 </body>
