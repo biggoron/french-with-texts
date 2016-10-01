@@ -21,26 +21,26 @@
 @import "fonts";
 
 * {
-  margin: 0px;
-  padding: 0px;
 }
+
 @mixin background-box {
-  height: 100%;
   font-family: verdana, arial, sans-serif;
   background-color: $dark-background;
-  padding: 0px;
 }
 
 
 html, body, #page-wrapper {
   @include background-box;
+  padding: 10px;
 }
 
 #main {
   background-color: $light-background;
   width: 100%;
-  padding: 10px;
-  margin: 0px;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 5vh;
+  margin-bottom: 60px;
 }
 
 #banner {
@@ -70,9 +70,12 @@ html, body, #page-wrapper {
 
 #nav-shadow{
   height: 50px;
-  vertical-align: middle;
   padding: 0px;
   width: 100%;
+  padding: 0px;
+  margin: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 #footer-menu{
@@ -140,6 +143,7 @@ a{
   color: white;
 }
 .jumbotron {
+  margin: 0px;
   padding: 20px;
   text-align: center;
   background-color: white;
@@ -149,9 +153,9 @@ a{
   }
 }
 
-hr.hr-fade {
-  border: 0;
-  height: 0;
-  box-shadow: 0 0 10px 1px black;
-  content: "\00a0";
+hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+hr.title-hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
 }

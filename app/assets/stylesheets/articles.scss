@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // The thumbnail
+@import "colors";
 
 .article-thumbnail {
   display: inline-block;
@@ -24,7 +25,7 @@
   width: 100%;
   text-align: center;
   color: White;
-  background-color: #3B5999;
+  background-color: $xdark-blue;//#3B5999;
 }
 .thumbnail-title {
   vertical-align: middle; 

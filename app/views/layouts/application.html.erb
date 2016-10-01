@@ -15,14 +15,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="page-wrapper">
+  <div id="page-wrapper" class="container">
     <div id="banner" class="container-fluid">
       <%= link_to(admin_path, id: 'banner-link') do %>
         <%= image_tag("lunettes.png", id: 'banner-icon') %> 
         <div id="menu-title">ダンのプチブログ</div>
       <% end %>
     </div>
-    <div class="row" id="main">
+    <div class="container" id="main">
 		      <%= yield %>
     </div>
     <div id="nav-shadow" class="row">

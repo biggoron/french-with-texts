@@ -9,30 +9,6 @@
     <span class='thumbnail-title'>
       <%= article.title %>
     </span>
-    <% if @admin %>
-      <% if article.online %>
-        <%= link_to  controller: 'articles',
-                      action: :offline,
-                      id: article.id do %> 
-          <span class="glyphicon glyphicon-import"></span>
-        <% end %>
-      <% else %>
-        <%= link_to  controller: 'articles',
-                      action: :online,
-                      id: article.id do %> 
-          <span class="glyphicon glyphicon-export"></span>
-        <% end %>
-      <% end %>
-      <%= link_to edit_article_path(article) do %>
-        <span class="glyphicon glyphicon-pencil"></span>
-      <% end %>
-      <br/>
-      <%= link_to article_path(article),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } do %>
-        <span class="glyphicon glyphicon-remove"></span>
-      <% end %>
-    <% end %>
   </div>
   <% end %> 
 </div>

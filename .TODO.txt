@@ -1,10 +1,9 @@
-beautify separation between title and indexes
-check the menu active state
+finish that bot menu
+
 beautify section's titles
 beautify download button
 change menu on small devices (when online)
 define ajax search in collapsible tab
-make the js anim to hide menu
 
 create tags (and tag search for adding tags, editing tags, search by tags)
 

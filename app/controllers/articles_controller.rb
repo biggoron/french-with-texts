@@ -26,9 +26,9 @@ skip_before_action :require_admin, only: [:show]
     when "link"
       @menu_item = "links-menu"
       controller = :links
-    when "prononciation"
-      @menu_item = "prononciation-menu"
-      controller = :prononciation
+    when "post"
+      @menu_item = "home-menu"
+      controller = :main
     else
       redirect_to root_path
     end

@@ -10,6 +10,7 @@ skip_before_action :require_admin, only: [:index, :contact, :admin_login, :admin
   def index
     # Set the menu bullet
     @menu_item = "home-menu"
+    @articles = Article.where(online: true, layout: "post")
     render 'layouts/home_page'
   end
   def contact

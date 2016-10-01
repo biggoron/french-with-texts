@@ -3,48 +3,19 @@
   <h1 style="font-family: 'Anzumoji';">ダンのプチブログ</h1>
   <p>このウェブサイトは日本人向きのフランス語を学ぶためのウェブサイトです!!!
   </p>
-  <p>今このウェブサイトを作って始めたので資料が少なくて日本語で書いているテキストの中に誤りがあるかもしれない。今でもこのウェブサイトで勉強できるけど絶対リンクスのページに行ってこのウェブサイトが上達させられる間に他のウェブサイトも拝見してください。</p>
+  <p>今このウェブサイトを作って始めたので資料が少なくて日本語で書いているテキストの中に誤りがあるかもしれない。今でもこのウェブサイトで勉強できるけど絶対リンクスのページに行ってこのウェブサイトが上達させられる間に他のウェブサイトもご覧ください。</p>
   <p>
   <a href='<%= links_index_path %>' class="btn btn-primary btn-large">リンクスヘ</a> 
   </p>
   </header>
-  <hr>
-  <!-- Title -->
-    <div class="row">
-      <div class="col-lg-12">
-        <h3>最新フィーチャ</h3>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <!-- Page Features -->
-    <div class="row text-center">
-
-      <div class="col-md-3 col-sm-6 hero-feature">
-        <div class="thumbnail">
-            <div class="caption">
-              <h3>語彙</h3>
-              <p>単語を習うための内容はこちら！</p>
-              <p>
-                <a href='<%= vocabulary_index_path %>'
-                   class="btn btn-primary">
-                   語彙へ
-                </a>
-              </p>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 hero-feature">
-        <div class="thumbnail">
-            <div class="caption">
-              <h3>文法</h3>
-              <p>新しい文法レッスン!!!</p>
-              <p>
-                <a href='/grammar/6' class="btn btn-primary">レッスンへ</a> 
-              </p>
-            </div>
-        </div>
-      </div>
-    </div>
+  <hr class="title-hr">
+  <div class='display-block' id='display-articles'>
+  <% @articles.each do |article| %>
+    <% @articles.each do |article| %>
+      <%= render partial: 'articles/article',
+                  locals: {article: article} %>
+    <% end %>
+  <% end %>
+  </div>
+</div>
 
