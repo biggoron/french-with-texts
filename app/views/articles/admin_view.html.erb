@@ -1,0 +1,12 @@
+<%= link_to controller: 'articles',
+            action: 'show',
+            id: article.id do %>
+<tr>
+  <td><%= article.title %></td>
+  <td><%= article.layout %></td>
+  <td><%= article.timestamp %></td>
+  <td><%= article.image_name %></td>
+  <td><%= article.filename %></td>
+  <td><%= article.online %></td>
+</tr>
+<% end %>

@@ -1,0 +1,27 @@
+<div class='display-block' id='display-articles'>
+  <h1>Listing articles</h1>
+  <table id="admin-board" class="table table-hover">
+    <thead>
+      <th>Title</th>
+      <th>Layout</th>
+      <th>Date</th>
+      <th>Image</th>
+      <th>File</th>
+      <th>Online</th>
+    </thead>
+    <% @articles.each do |article| %>
+      <tr>
+      <%= render partial: 'articles/admin_view',
+                  locals: {article: article} %>
+      </tr>
+    <% end %>
+    <tfoot>
+      <td colspan='6'>
+        <%= link_to new_article_path do %>
+          <span class="glyphicon glyphicon-plus">
+          </span>
+        <% end %> 
+      </td>
+    </tfoot>
+  </table>
+</div>

@@ -1,0 +1,6 @@
+<div class='display-block' id='display-articles'>
+  <% @articles.each do |article| %>
+    <%= render partial: 'articles/article',
+                locals: {article: article} %>
+  <% end %>
+</div>
