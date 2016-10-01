@@ -103,9 +103,13 @@ html, body, #page-wrapper {
       margin: 0px;
       &:hover {
         background-color: $xdark-blue;
+        color: white;
       }
-      &:active {
-        background-color: $xlight-yellow;
+      &.active {
+        background-color: $blue;
+        a {
+          color: lightgrey;
+        }
       }
       a {
         display: inline-block;
@@ -113,16 +117,9 @@ html, body, #page-wrapper {
         font-size: 3.0vw;
         background-color: transparent;
         font-family: Anzumoji;
+        text-decoration: none;
       }
     } 
-  }
-}
-
-a{
-  text-decoration: none;
-  color: black;
-  &:hover {
-    font-weight: 600;
   }
 }
 
@@ -141,16 +138,6 @@ a{
 .btn-primary {
   text-decoration: none;
   color: white;
-}
-.jumbotron {
-  margin: 0px;
-  padding: 20px;
-  text-align: center;
-  background-color: white;
-  p {
-    font-size: 22px;
-    line-height: 26px;
-  }
 }
 
 hr {

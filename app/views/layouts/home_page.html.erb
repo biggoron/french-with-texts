@@ -1,20 +1,12 @@
 <div class="container-fluid">
-  <header class="jumbotron hero-spacer">
-  <h1 style="font-family: 'Anzumoji';">ダンのプチブログ</h1>
+  <h1 style="font-family: 'Anzumoji';">ダンのプチブログへようこそ!!!</h1>
   <p>このウェブサイトは日本人向きのフランス語を学ぶためのウェブサイトです!!!
   </p>
-  <p>今このウェブサイトを作って始めたので資料が少なくて日本語で書いているテキストの中に誤りがあるかもしれない。今でもこのウェブサイトで勉強できるけど絶対リンクスのページに行ってこのウェブサイトが上達させられる間に他のウェブサイトもご覧ください。</p>
-  <p>
-  <a href='<%= links_index_path %>' class="btn btn-primary btn-large">リンクスヘ</a> 
-  </p>
-  </header>
   <hr class="title-hr">
   <div class='display-block' id='display-articles'>
   <% @articles.each do |article| %>
-    <% @articles.each do |article| %>
-      <%= render partial: 'articles/article',
-                  locals: {article: article} %>
-    <% end %>
+    <%= render partial: 'articles/post',
+                locals: {article: article} %>
   <% end %>
   </div>
 </div>

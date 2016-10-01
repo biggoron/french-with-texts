@@ -1,0 +1,8 @@
+<header class="jumbotron hero-spacer">
+  <div>
+    <h1><%= article.title %></h1>
+    <span class="article-date"><%= article.created_at %></span>
+  </div>
+  <hr class="title-hr">
+  <%= render "texts/posts/#{article.filename}" %>
+</header>

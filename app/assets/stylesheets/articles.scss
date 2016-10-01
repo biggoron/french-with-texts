@@ -4,6 +4,7 @@
 
 // The thumbnail
 @import "colors";
+@import "reset";
 
 .article-thumbnail {
   display: inline-block;
@@ -73,3 +74,32 @@
   color: red;
   font-weight: 600;
 }
+
+.jumbotron {
+  h1.post-title {
+    font-size: 150%;
+  }
+  div {
+    position: relative;
+    h1 {
+      display: inline-block;
+      font-size: 250%;
+      position: absolute;
+      line-height: 0%;
+      bottom: 0px;
+      left: 0px;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
+
+.article-date {
+  display: inline-block;
+  font-size: 120%;
+  line-height: 0%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
