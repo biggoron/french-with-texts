@@ -49,11 +49,12 @@ class ApplicationController < ActionController::Base
       @admin = false
     end
   end
+
   def set_menu
-    # I guess it set the menu on home page by default
-    # What's that?!?!
+    # Set the menu on home page by default
     @menu_item = "caca-menu"
   end
+
   def require_admin
     # If the user is not admin, he is redirected to home page
     unless session[:user_type] == 'admin'

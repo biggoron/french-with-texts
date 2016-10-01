@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'vocabulary/:id' => 'vocabulary#show'
   get 'events/index' => 'events'
   get 'events/:id' => 'events#show'
+  get 'resources/index' => 'resources'
+  get 'resources/:id' => 'resources#show'
   get 'links/index' => 'links'
   get 'links/:id' => 'links#show'
   get 'prononciation/index' => 'prononciation'
@@ -20,8 +22,10 @@ Rails.application.routes.draw do
   get 'contact' => 'main#contact'
   get 'admin_login' => 'main#admin_login'
   get 'admin_logout' => 'main#admin_logout'
-
+  
   get 'links/packet_download/:id(.:file)(.:ext)' => 'links#packet_download'
+
+  get '/admin', to: 'admin#index', as: 'admin'
 
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".

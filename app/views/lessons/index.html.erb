@@ -1,7 +1,3 @@
 <h1>レッスン</h1>
-<% @articles.each do |article| %>
-  <%= render partial: 'articles/article',
-              locals: {article: article}
-  %>
-<% end %>
-
+<%= render partial: 'articles/public_index',
+           locals: {articles: @articles} %>

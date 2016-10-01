@@ -3,12 +3,7 @@ class LessonsController < ArticlesController
 skip_before_action :require_admin, only: [:index, :show]
 
   def index
-    if @admin
-      @articles = Article.where(layout: "lesson")
-    else
-      @articles = Article.where(online: true,
-                                layout: "lesson")
-    end
+    @articles = Article.where(online: true, layout: "lesson")
     render 'layouts/not_implemented' if @articles.length == 0
   end
   def show

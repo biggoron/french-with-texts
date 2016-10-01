@@ -3,14 +3,13 @@ class ArticlesController < ApplicationController
 # article
 # TODO: check if an offline article shows if accessed through
 # url
+#
+# An article can only be show to lambda user, index of all
+# articles is admin priviledge
 skip_before_action :require_admin, only: [:show]
 
   def index
-    if @admin
-      @articles = Article.all
-    else
-      @articles = Article.where(online: true)
-    end
+    @articles = Article.all
   end
 
   def show
@@ -21,21 +20,17 @@ skip_before_action :require_admin, only: [:show]
     when "lesson"
       @menu_item = "lessons-menu"
       controller = :lessons
-    when "grammar"
-      @menu_item = "grammar-menu"
-      controller = :grammar
-    when "vocabulary"
-      @menu_item = "voc-menu"
-      controller = :vocabulary
-    when "event"
-      @menu_item = "events-menu"
-      controller = :events
+    when "resource"
+      @menu_item = "resources-menu"
+      controller = :resources
     when "link"
       @menu_item = "links-menu"
       controller = :links
     when "prononciation"
       @menu_item = "prononciation-menu"
       controller = :prononciation
+    else
+      redirect_to root_path
     end
     redirect_to url_for(controller: controller,
                        action: :show,

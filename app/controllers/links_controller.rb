@@ -1,14 +1,11 @@
 class LinksController < ArticlesController 
 # See article's controller
 skip_before_action :require_admin, only: [:index, :show, :packet_download]
+before_action :set_menu, only: [:index, :show]
 
   def index
-    if @admin
-      @articles = Article.where(layout: "link")
-    else
       @articles = Article.where(online: true,
                                 layout: "link")
-    end
   end
 
   def show
@@ -19,7 +16,7 @@ skip_before_action :require_admin, only: [:index, :show, :packet_download]
 
   # GET /links/new
   def new
-    @link = Link.new
+    @link = Article.new
   end
 
   # GET /links/1/edit

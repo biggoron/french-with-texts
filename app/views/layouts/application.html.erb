@@ -17,7 +17,7 @@
 <body>
   <div id="page-wrapper">
     <div id="banner" class="container-fluid">
-      <%= link_to(root_path, id: 'banner-link') do %>
+      <%= link_to(admin_path, id: 'banner-link') do %>
         <%= image_tag("lunettes.png", id: 'banner-icon') %> 
         <div id="menu-title">ダンのプチブログ</div>
       <% end %>
@@ -30,30 +30,19 @@
     <nav class="row" id="footer-menu">
       <%= content_tag "ul", id: "website-menu", data: {page: @menu_item} do %>
         <li class="active" id="home-menu">
-          <%= link_to 'ホーム', controller: 'main' %></li>
+          <%= link_to 'ホーム', controller: 'main' %>
+        </li>
         <li id="lessons-menu">
-          <%= link_to 'レッスン', lessons_path %></li>
-        <% if @admin %>
-          <li id="texts-menu">
-            <%= link_to 'Articles', articles_path %></li>
-        <% end %>
-        <li id="grammar-menu">
-          <%= link_to '文法', controller: 'grammar' %></li>
-        <li id="voc-menu">
-          <%= link_to '語彙', controller: 'vocabulary' %>
+          <%= link_to 'レッスン', controller: 'lessons' %>
         </li>
-        <li id="prononciation-menu">
-          <%= link_to '発音', controller: 'prononciation' %>
-        </li>
-        <li id="events-menu">
-          <%= link_to 'イベント', controller: 'events' %>
-        </li>
-        <li id="contact-menu">
-          <%= link_to '連絡', controller: :main,
-                                  action: :contact %>
+        <li id="resources-menu">
+          <%= link_to '便利な資料', controller: 'resources' %></li>
         </li>
         <li id="links-menu">
           <%= link_to 'リンクス', links_index_path%>
+        </li>
+        <li id="kyoushi-menu">
+          <%= link_to 'ライブレッスン', controller: 'main', action: 'contact'%>
         </li>
       <% end %>
     </nav>
