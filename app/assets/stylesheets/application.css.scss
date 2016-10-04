@@ -88,6 +88,7 @@ html, body, #page-wrapper {
   width: 100%;
   bottom: 0px;
   left: 0px;
+  box-shadow: 8px -8px 16px LightGray;
   #website-menu {
     height: 100%;
     width: 100%;
@@ -101,20 +102,19 @@ html, body, #page-wrapper {
       vertical-align: middle;
       padding: 0px;
       margin: 0px;
+      line-height: 40px;
       &:hover {
         background-color: $xdark-blue;
         color: white;
       }
       &.active {
         background-color: $blue;
-        a {
-          color: lightgrey;
-        }
+        color: white;
       }
-      a {
+      .menu_item {
         display: inline-block;
 				vertical-align: middle;
-        font-size: 3.0vw;
+        font-size: calc(5px + 2.0vw);
         background-color: transparent;
         font-family: Anzumoji;
         text-decoration: none;

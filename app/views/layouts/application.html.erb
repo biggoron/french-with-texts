@@ -29,21 +29,31 @@
     </div>
     <nav class="row" id="footer-menu">
       <%= content_tag "ul", id: "website-menu", data: {page: @menu_item} do %>
-        <li class="active" id="home-menu">
-          <%= link_to 'ホーム', controller: 'main' %>
-        </li>
-        <li id="lessons-menu">
-          <%= link_to 'レッスン', controller: 'lessons' %>
-        </li>
-        <li id="resources-menu">
-          <%= link_to '便利な資料', controller: 'resources' %></li>
-        </li>
-        <li id="links-menu">
-          <%= link_to 'リンクス', links_index_path%>
-        </li>
-        <li id="kyoushi-menu">
-          <%= link_to 'ライブレッスン', controller: 'main', action: 'contact'%>
-        </li>
+        <%= link_to controller: 'main' do %> 
+          <li class="active" id="home-menu">
+            <span class="menu_item">ホーム</span>
+          </li>
+        <% end %>
+        <%= link_to controller: 'lessons' do %>
+          <li id="lessons-menu">
+            <span class="menu_item">レッスン</span>
+          </li>
+        <% end %>
+        <%= link_to controller: 'resources' do %>
+          <li id="resources-menu">
+            <span class="menu_item">便利な資料</span>
+          </li>
+        <% end %>
+        <%= link_to links_index_path do %>
+          <li id="links-menu">
+            <span class="menu_item">リンクス</span>
+          </li>
+        <% end %>
+        <%= link_to controller: 'main', action: 'contact' do %>
+          <li id="kyoushi-menu">
+            <span class="menu_item">ライブレッスン</span>
+          </li>
+        <% end %>
       <% end %>
     </nav>
   </div>
