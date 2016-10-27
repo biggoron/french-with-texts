@@ -75,15 +75,23 @@
   font-weight: 600;
 }
 
-.jumbotron {
+.jumbotron.post {
+  h1.header {
+    font-size: calc(14px + 1.5vw);
+  }
+  p {
+    font-size: calc(10px + 1.0vw);
+  }
+  span.article-date {
+    font-size: calc(10px + 1.2vw);
+  }
   h1.post-title {
-    font-size: 150%;
+    font-size: calc(12px + 1.3vw);
   }
   div {
     position: relative;
     h1 {
       display: inline-block;
-      font-size: 250%;
       position: absolute;
       line-height: 0%;
       bottom: 0px;

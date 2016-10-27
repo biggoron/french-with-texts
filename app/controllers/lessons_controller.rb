@@ -1,6 +1,7 @@
 class LessonsController < ArticlesController 
 # See article's controller
 skip_before_action :require_admin, only: [:index, :show]
+before_action :set_menu, only: [:index, :show]
 
   def index
     @articles = Article.where(online: true, layout: "lesson")
@@ -8,7 +9,6 @@ skip_before_action :require_admin, only: [:index, :show]
   end
   def show
     @article = Article.find(params[:id])
-    @filepath = "texts/lessons/#{@article.filename}.html"
   end
 private
   def set_menu

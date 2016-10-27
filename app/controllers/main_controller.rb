@@ -7,6 +7,7 @@ http_basic_authenticate_with name: "admin",
 # No need to be admin to login as admin
 skip_before_action :adminness, only: [:admin_login, :admin_logout]
 skip_before_action :require_admin, only: [:index, :contact, :admin_login, :admin_logout]
+before_action :set_menu, only: [:index, :show]
   def index
     # Set the menu bullet
     @menu_item = "home-menu"
@@ -28,5 +29,10 @@ skip_before_action :require_admin, only: [:index, :contact, :admin_login, :admin
   def admin_logout
     session[:user_type] = :not_admin
     redirect_to action: 'index'
+  end
+private
+  def set_menu 
+# See ActionController
+    @menu_item = "home-menu"
   end
 end

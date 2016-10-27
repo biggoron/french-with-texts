@@ -10,7 +10,6 @@ before_action :set_menu, only: [:index, :show]
 
   def show
     @article = Article.find(params[:id])
-    @filepath = "texts/links/#{@article.filename}"
     @menu_item = "links-menu"
   end
 
@@ -21,13 +20,13 @@ before_action :set_menu, only: [:index, :show]
 
   # GET /links/1/edit
   def edit
-    @link = Link.find(params[:id])
+    @link = Article.find(params[:id])
   end
 
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(link_params)
+    @link = Article.new(link_params)
     if @link.save
       redirect_to links_path
     else
@@ -36,7 +35,7 @@ before_action :set_menu, only: [:index, :show]
   end
 
   def update
-    @link = Link.find(params[:id])
+    @link = Article.find(params[:id])
     if @link.update(link_params)
       redirect_to links_path
     else
@@ -45,7 +44,7 @@ before_action :set_menu, only: [:index, :show]
   end
 
   def destroy
-    @link = Link.find(params[:id])
+    @link = Article.find(params[:id])
     @link.destroy
     redirect_to links_path
   end

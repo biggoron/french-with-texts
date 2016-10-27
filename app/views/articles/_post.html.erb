@@ -1,8 +1,10 @@
-<header class="jumbotron hero-spacer">
+<div class="jumbotron post hero-spacer">
   <div>
-    <h1><%= article.title %></h1>
-    <span class="article-date"><%= article.created_at %></span>
+    <h1 class="header"><%= article.title %></h1>
+    <span class="article-date"><%=
+      article.created_at.strftime("%m/%-d/%Y")
+    %></span>
   </div>
   <hr class="title-hr">
-  <%= render "texts/posts/#{article.filename}" %>
-</header>
+  <%= render article.full_path %>
+</div>

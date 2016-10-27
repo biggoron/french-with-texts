@@ -16,46 +16,13 @@
 </head>
 <body>
   <div id="page-wrapper" class="container">
-    <div id="banner" class="container-fluid">
-      <%= link_to(admin_path, id: 'banner-link') do %>
-        <%= image_tag("lunettes.png", id: 'banner-icon') %> 
-        <div id="menu-title">ダンのプチブログ</div>
-      <% end %>
+    <%= render partial: 'main/banner' %>
+    <div class="container-fluid" id="main">
+      <%= yield %>
     </div>
-    <div class="container" id="main">
-		      <%= yield %>
-    </div>
-    <div id="nav-shadow" class="row">
-    </div>
-    <nav class="row" id="footer-menu">
-      <%= content_tag "ul", id: "website-menu", data: {page: @menu_item} do %>
-        <%= link_to controller: 'main' do %> 
-          <li class="active" id="home-menu">
-            <span class="menu_item">ホーム</span>
-          </li>
-        <% end %>
-        <%= link_to controller: 'lessons' do %>
-          <li id="lessons-menu">
-            <span class="menu_item">レッスン</span>
-          </li>
-        <% end %>
-        <%= link_to controller: 'resources' do %>
-          <li id="resources-menu">
-            <span class="menu_item">便利な資料</span>
-          </li>
-        <% end %>
-        <%= link_to links_index_path do %>
-          <li id="links-menu">
-            <span class="menu_item">リンクス</span>
-          </li>
-        <% end %>
-        <%= link_to controller: 'main', action: 'contact' do %>
-          <li id="kyoushi-menu">
-            <span class="menu_item">ライブレッスン</span>
-          </li>
-        <% end %>
-      <% end %>
-    </nav>
+    <!-- <div id="nav-shadow" class="row">
+    </div> -->
+    <%= render partial: 'main/footer_menu' %>
   </div>
 </body>
 </html>

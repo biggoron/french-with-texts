@@ -1,4 +1,3 @@
-class Link < ActiveRecord::Base
-    validates  :title,    presence:  true
-    validates  :address,  presence:  true
+class Link < Article
+  validates  :address,  presence:  true
 end

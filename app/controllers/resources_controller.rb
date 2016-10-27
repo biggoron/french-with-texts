@@ -9,7 +9,6 @@ before_action :set_menu, only: [:index, :show]
 
   def show
     @article = Article.find(params[:id])
-    @filepath = "texts/resources/#{@article.filename}"
     @menu_item = "resources-menu"
   end
 

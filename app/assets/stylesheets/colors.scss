@@ -26,6 +26,6 @@ $xdark-yellow: #8F7700;
 
 // Elements
 $light-background: $xlight-yellow;
-$dark-background: $xlight-blue;
+$dark-background: lighten($xlight-blue, 10%);
 $dark-hl: #1A1A1A;
 $dark-active: #151515;

@@ -1,7 +1,4 @@
-<div class="container-fluid">
-  <h1 style="font-family: 'Anzumoji';">ダンのプチブログへようこそ!!!</h1>
-  <p>このウェブサイトは日本人向きのフランス語を学ぶためのウェブサイトです!!!
-  </p>
+  <h1 id="list-title" class="h1">ニュースフィード</h1>
   <hr class="title-hr">
   <div class='display-block' id='display-articles'>
   <% @articles.each do |article| %>
@@ -9,5 +6,3 @@
                 locals: {article: article} %>
   <% end %>
   </div>
-</div>
-

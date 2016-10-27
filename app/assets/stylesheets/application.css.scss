@@ -31,13 +31,11 @@
 
 html, body, #page-wrapper {
   @include background-box;
-  padding: 10px;
 }
 
 #main {
-  background-color: $light-background;
+  background-color: none;
   width: 100%;
-  padding: 25px;
   border-radius: 15px;
   margin-top: 5vh;
   margin-bottom: 60px;
@@ -48,6 +46,7 @@ html, body, #page-wrapper {
   width: 100%;
   position: relative;
   text-align: center;
+  margin-top: 4vh;
   a#banner-link {
     display: inline-block;
     max-height: 150px;
@@ -62,8 +61,14 @@ html, body, #page-wrapper {
       vertical-align: middle;
       min-width: 60%;
       font-family: Anzumoji;
-      font-size: 7.0vw;
-      text-align: center;
+      line-height: 180%;
+      margin-left: 5%;
+      span#main-title {
+        font-size: 7.0vw;
+      }
+      span#secondary-title {
+        font-size: 3.0vw;
+      }
     }
   }
 }
@@ -80,7 +85,7 @@ html, body, #page-wrapper {
 
 #footer-menu{
   height: 50px;
-  background-color: $dark-background;
+  background-color: darken($dark-background, 5%);
   text-align: center;
   padding: 0px;
   margin: 0px;
@@ -88,7 +93,7 @@ html, body, #page-wrapper {
   width: 100%;
   bottom: 0px;
   left: 0px;
-  box-shadow: 8px -8px 16px LightGray;
+  box-shadow: 8px -8px 16px desaturate($dark-background, 10%);
   #website-menu {
     height: 100%;
     width: 100%;
