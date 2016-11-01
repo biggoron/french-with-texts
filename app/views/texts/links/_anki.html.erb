@@ -12,10 +12,17 @@
   <hr/>
 <p>ウェブではなくて、アプリではなくてデスクトップのAnkiソフトをつかえば、シェアパケットを手に入れないのでこのウェブサイトから直接に単語パケットをダウンロードしてソフトでインポートしてください。</p>
 <p>例えばこういうバタンでパケットをダウンロードできる：</p>  
-  <%= button_to "基礎挨拶語彙パケット", {
-                controller: "links",
-                action: "packet_download",
-                id: params[:id],
-                file: "basic.apkg"},
-                method: :get,
-								class: 'btn btn-large btn-primary' %>
+  <%= link_to controller: "articles",
+              action: "packet_download",
+              id: params[:id],
+              file: "basic",
+              ext: "apkg",
+              method: :get,
+              class: "btn btn-success" do %>
+  <button class="btn btn-success"><span class="glyphicon
+  glyphicon-download-alt" aria-hidden="true"></span>
+  基礎挨拶語彙</button>
+  <% end %>
+<br/>
+<br/>
+<br/>
