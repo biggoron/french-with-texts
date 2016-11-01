@@ -9,6 +9,7 @@ before_action :set_menu, only: [:index, :show]
   end
   def show
     @article = Article.find(params[:id])
+    require_admin unless @article.online
   end
 private
   def set_menu

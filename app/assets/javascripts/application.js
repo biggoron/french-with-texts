@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require init
+//= require lessons
 //= require articles
 //= require ahoy
+
 
