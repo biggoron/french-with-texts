@@ -56,18 +56,20 @@
   }
 }
 
-.conjugaison-table tr {
-  th, td {
-    background-color: #F2F2F2;
+.conjugaison-table, .rule-table {
+  tr {
+		th, td {
+			background-color: #F2F2F2;
 
-    .focus {
-      color: red;
-      font-weight: 600;
-    }
-  }
-  th {
-    font-weight: 600;
-  }
+			.focus {
+				color: red;
+				font-weight: 600;
+			}
+		}
+		th {
+			font-weight: 600;
+		}
+	}
 }
 
 .focus {
@@ -111,3 +113,29 @@
   right: 0px;
 }
 
+table.adaptive-table{
+	@media screen and (max-width: 500px) {
+		display: block;
+		td, th, tr {
+			display: block;
+		}
+		td:last-child, th:last-child {
+			border-bottom: solid black 1px;
+		}
+		td.table-sem-masc, th.table-sem-masc {
+			background-color: Lightblue;
+		}
+		td.table-sem-mascs, th.table-sem-mascs {
+			background-color: Lightsteelblue;
+		}
+		td.table-sem-fem, th.table-sem-fem {
+			background-color: #FFCCFF;
+		}
+		td.table-sem-fem, th.table-sem-fem {
+			background-color: #FF99FF;
+		}
+		td.table-sem-jap, th.table-sem-jap {
+			background-color: Palegreen;
+		}
+	}
+}

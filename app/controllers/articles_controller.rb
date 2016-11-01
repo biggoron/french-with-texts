@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 #
 # An article can only be show to lambda user, index of all
 # articles is admin priviledge
-skip_before_action :require_admin, only: [:show]
+skip_before_action :require_admin, only: [:show, :packet_download]
 
   def index
     @articles = Article.all

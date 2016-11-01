@@ -8,3 +8,5 @@ create anki package for current lessons
 add an アンキとは？こちへ
 
 get contact page done
+
+change colors for phone table display

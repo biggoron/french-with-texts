@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   get 'admin_login' => 'main#admin_login'
   get 'admin_logout' => 'main#admin_logout'
   
-  get 'links/packet_download/:id(.:file)(.:ext)' => 'links#packet_download'
+  #get 'articles/packet_download/:id(.:file)(.:ext)' => 'articles#packet_download'
+  get 'articles/packet_download/:id' => 'articles#packet_download'
 
   get '/admin', to: 'admin#index', as: 'admin'
 

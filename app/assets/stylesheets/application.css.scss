@@ -84,7 +84,9 @@ html, body, #page-wrapper {
 }
 
 #footer-menu{
-  height: 50px;
+  max-height: 50px;
+  min-height: 20px;
+  height: 10vh;
   background-color: darken($dark-background, 5%);
   text-align: center;
   padding: 0px;
@@ -148,6 +150,7 @@ html, body, #page-wrapper {
 hr {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
+
 hr.title-hr {
   border-top: 1px solid rgba(0, 0, 0, 0.4);
 }
