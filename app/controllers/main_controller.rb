@@ -11,7 +11,7 @@ before_action :set_menu, only: [:index, :show]
   def index
     # Set the menu bullet
     @menu_item = "home-menu"
-    @articles = Article.where(online: true, layout: "post")
+    @articles = Article.where(online: true, layout: "post").order("created_at DESC")
     render 'layouts/home_page'
   end
   def contact
