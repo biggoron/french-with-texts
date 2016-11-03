@@ -1,12 +1,7 @@
-beautify download button
-change menu on small devices (when online)
 define ajax search in collapsible tab
-
 create tags (and tag search for adding tags, editing tags, search by tags)
-
 create anki package for current lessons
-add an アンキとは？こちへ
-
-get contact page done
 
 change colors for phone table display
+
+add image to c lesson, add blog post for release
