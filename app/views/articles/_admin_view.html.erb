@@ -29,6 +29,11 @@
     <% end %>
   </td>
   <td>
+    <%= link_to article_path(article) do %>
+      <span class="glyphicon glyphicon-eye-open"></span>
+    <% end %>
+  </td>
+  <td>
     <%= link_to article_path(article),
           method: :delete,
           data: { confirm: 'Are you sure?' } do %>
