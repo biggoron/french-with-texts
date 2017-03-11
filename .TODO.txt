@@ -1,7 +1,11 @@
 define ajax search in collapsible tab
+
 create tags (and tag search for adding tags, editing tags, search by tags)
+
 create anki package for current lessons
 
 change colors for phone table display
 
 add image to c lesson, add blog post for release
+
+finnish adding sounds in etre lesson
